@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+import os
 import sys
 from os import getenv, path
 from pathlib import Path
@@ -145,7 +146,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 if DEVELOPMENT_MODE is True:
-    STATIC_URL = "static/"
+    STATIC_URL = "/static/"
+    # STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
     STATIC_ROOT = BASE_DIR / 'static'
     MEDIA_URL = 'media/'
     MEDIA_ROOT = BASE_DIR / 'media'
