@@ -16,6 +16,7 @@ from pathlib import Path
 import dotenv
 from django.core.management.utils import get_random_secret_key
 import dj_database_url
+from collections import deque 
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -207,3 +208,7 @@ CORS_ALLOWED_ORIGINS = getenv(
     'http://localhost:3000, http://127.0.0.1:3000'
 ).split(',')
 CORS_ALLOW_CREDENTIALS = True
+
+NYT_API_KEY = getenv('NYT_API_KEY')
+NEWS_CACHE = {"data": None, "timestamp": None}
+REQUEST_QUEUE = deque(maxlen=10)
