@@ -6,7 +6,6 @@ from .views import (
     LogoutView,
     NewsGaloreView,
     RawNewsView
-
 )
 
 urlpatterns = [

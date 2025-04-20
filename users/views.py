@@ -13,6 +13,7 @@ from rest_framework_simplejwt.views import (
 import boto3
 import json
 import logging
+from collections import deque
 
 logger = logging.getLogger(__name__)
 
